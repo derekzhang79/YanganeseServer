@@ -5,6 +5,8 @@ class Quiz < ActiveRecord::Base
 
   before_create :default_values
 
+  has_many :questions
+
   def as_json(options = {})
     {
       title: title,
