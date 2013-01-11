@@ -14,9 +14,9 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.new(params[:quiz])
 
     if @quiz.save
-      respond_with(@quiz)
+      respond_with({success: true, quiz_id: @quiz.id}, location: nil)
     else
-      respond_with("error creating quiz")
+      respond_with({success: false}, location: nil)
     end
   end
 
@@ -24,9 +24,9 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.find(params[:id])
 
     if @quiz.update_attributes(params[:quiz])
-      respond_with(@quiz)
+      respond_with({success: true, quiz_id: @quiz.id}, location: nil)
     else
-      respond_with("error updating quiz")
+      respond_with({success: false}, location: nil)
     end
   end
 
@@ -34,9 +34,9 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.find(params[:id])
 
     if @quiz.destroy
-      respond_with(@quiz)
+      respond_with({success: true, quiz_id: @quiz.id, quiz: @quiz}, location: nil)
     else
-      respond_with("error destroying quiz")
+      respond_with({success: false}, location: nil)
     end
   end
 end
