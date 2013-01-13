@@ -14,6 +14,7 @@ The payload looks like this:
 ``` javascript
 {
   "quiz": {
+    "quiz_id": 1,
     "title": "Mad Hard Quiz",
     "author": "Me",
     "category_id": 1
@@ -49,6 +50,7 @@ The payload looks like this:
     "w": "Earth",
     "x": "Saturn",
     "y": "Mercury",
+    "z": "The Moon",
     "category_id": 1,
     "quiz_id": 15
   }
