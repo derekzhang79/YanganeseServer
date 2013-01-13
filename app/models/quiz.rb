@@ -9,6 +9,7 @@ class Quiz < ActiveRecord::Base
 
   def as_json(options = {})
     {
+      quiz_id: id,
       title: title,
       author: author,
       category_id: category_id,
